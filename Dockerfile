@@ -1,4 +1,4 @@
-FROM postgres:16-alpine
+FROM postgres:15-alpine
 
 RUN set -ex \
     && apk add --no-cache --virtual .build-deps gcc libc-dev make pkgconf clang15 llvm15 cmake g++\
