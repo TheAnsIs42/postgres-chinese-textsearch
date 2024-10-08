@@ -25,4 +25,4 @@ RUN set -ex \
     && echo "echo \"shared_preload_libraries = 'pg_jieba.so'\" >> /var/lib/postgresql/data/postgresql.conf" > /docker-entrypoint-initdb.d/load-lib.sh \
     && apk del .build-deps \
     && rm -rf /zhparser-master /scws-master /cppjieba /pg_jieba-master
-COPY install_extension.sql /docker-entrypoint-initdb.d/
+COPY install_extension.sql init_extension.sh /docker-entrypoint-initdb.d/
