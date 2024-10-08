@@ -1,7 +1,7 @@
 FROM postgres:16-alpine
 
 RUN set -ex \
-    && apk add --no-cache --virtual .build-deps gcc libc-dev make pkgconf clang llvm cmake g++\
+    && apk add --no-cache --virtual .build-deps gcc libc-dev make pkgconf clang15 llvm15 cmake g++\
     && apk add --no-cache git build-base linux-headers make postgresql-dev automake libtool autoconf m4 \
     && wget -q -O - "https://github.com/hightman/scws/archive/master.tar.gz" | tar zxf - \
     && wget -q -O - "https://github.com/amutu/zhparser/archive/master.tar.gz" | tar zxf - \
